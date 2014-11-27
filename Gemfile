@@ -19,7 +19,7 @@ group :development, :test do
   gem 'pry-nav'
 end
 
-gem :test do 
+group :test do 
   gem 'rspec-rails' 
 end
 
