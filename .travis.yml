@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: MQBM9gCIErDVmEy6/h0uLwwZT2gA/RNClqIHzF76LYD6HeHzdNxH/7Q87o3fJVsHXYb6XhUmRwXbcvyvpjKDNHIFHoTDU2xhT1us4iKKS2OZw28n6C+EV8+RRtDSzPC3c6V2VNereChVeQqqXeE7o7fsGQV9djQfW99w+pIp9LQ=
+  app: fiveshows
+  on:
+    repo: cored/five_shows
