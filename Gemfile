@@ -15,6 +15,7 @@ gem 'puma'
 gem 'spring',        group: :development
 gem 'simple_form'
 gem 'foundation-rails'
+gem 'lastfm'
 
 group :development, :test do 
   gem 'pry-rails' 
