@@ -16,6 +16,7 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'lastfm'
+gem 'dotenv-rails'
 
 group :development, :test do 
   gem 'pry-rails' 
@@ -25,6 +26,8 @@ end
 group :test do 
   gem 'rspec-rails' 
   gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do 
