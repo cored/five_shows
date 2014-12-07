@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20141207212949) do
   enable_extension "plpgsql"
 
   create_table "concerts", force: true do |t|
+    t.string   "username"
     t.string   "artist"
     t.string   "uri"
     t.string   "name"
