@@ -4,7 +4,7 @@
   <ul class="concerts">
   <% @concerts.each do |concert| %>
     <li>
-      <%= concert.uri %>
+      <%= link_to concert.name, concert.uri %>
     </li>
   <% end %>
   </ul>
