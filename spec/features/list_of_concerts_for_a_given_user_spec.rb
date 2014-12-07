@@ -14,12 +14,14 @@ feature 'List five concerts for a given user based on top last.fm ratings' do
     end
   end
 
-  pending 'Successfully' do 
+  scenario 'Successfully' do 
     visit root_path
 
-    fill_in 'Last.fm username', with: 'cored'
-    click_on 'Give me!'
+    VCR.use_cassette('list-artists-and-concerts') do 
+      fill_in 'Last.fm username', with: 'cored'
+      click_on 'Give me!'
 
-    expect(page).to have_css '.concerts li', text: 'Info'
+      expect(page).to have_css '.concerts li', text: 'Info'
+    end
   end
 end
