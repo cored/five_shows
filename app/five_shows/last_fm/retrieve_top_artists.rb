@@ -11,6 +11,8 @@ module FiveShows
                      artist.fetch("playcount"),
                      artist.fetch("url"))
         end.take(5)
+      rescue Lastfm::ApiError
+        []
       end
 
       Artist = Struct.new(:name, :playcount, :url)
