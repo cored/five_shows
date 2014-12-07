@@ -6,7 +6,7 @@ module FiveShows
       def call(artists)
         songkick_api = Songkickr::Remote.new ENV.fetch('SONGKICK_APIKEY')
         concerts = artists.map do |artist| 
-          songkick_result = songkick_api.events(artist).results.first
+          songkick_result = songkick_api.events(artist.name).results.first
           Venue.new(artist, songkick_result.display_name, songkick_result.uri)
         end
         concerts

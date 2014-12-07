@@ -1,12 +1,19 @@
 require 'vcr_helper'
 require 'songkickr'
 require 'spec_helper'
+require_relative '../../../app/five_shows/last_fm/retrieve_top_artists'
 require_relative '../../../app/five_shows/song_kick/retrieve_concerts_for'
 
 describe FiveShows::SongKick::RetrieveConcertsFor do
   describe '#call' do
     let(:artists) do
-      ['The Used', 'Ed Sheeran', 'La Roux', 'The Cat Empire', 'Kaiser Chiefs']
+      ['The Used', 
+       'Ed Sheeran', 
+       'La Roux',
+       'The Cat Empire', 
+       'Kaiser Chiefs'].map do |name|
+          FiveShows::LastFm::RetrieveTopArtists::Artist.new(name, 1, '#')
+       end
     end
 
     it 'returns a list of urls for concerts' do
