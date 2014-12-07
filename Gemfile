@@ -16,6 +16,7 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'lastfm'
+gem 'songkickr'
 gem 'dotenv-rails'
 
 group :development, :test do 
