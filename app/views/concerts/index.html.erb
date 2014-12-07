@@ -1,1 +1,11 @@
+<% if (@concerts.empty?) %>
 <h2>You need to start scrobbling your music preferences so we can help you out</h2>
+<% else %>
+  <ul class="concerts">
+  <% @concerts.each do |concert| %>
+    <li>
+      <%= concert.uri %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
