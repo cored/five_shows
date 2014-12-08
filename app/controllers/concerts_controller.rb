@@ -9,9 +9,7 @@ class ConcertsController < ApplicationController
   def index
     @concerts = FiveShows::SongKick::RetrieveConcertsFor.(
       FiveShows::LastFm::RetrieveTopArtists.(concerts_params[:username])
-    ).map do |concert|
-      Concert.save_concert(concert.artist.name, concert.name, concert.uri)
-    end
+    )
   end
 
   private
