@@ -7,17 +7,11 @@ class ConcertsController < ApplicationController
   end
 
   def index
-    @concerts = Concert.all
-  end
-
-  def create
-    FiveShows::SongKick::RetrieveConcertsFor.(
+    @concerts = FiveShows::SongKick::RetrieveConcertsFor.(
       FiveShows::LastFm::RetrieveTopArtists.(concerts_params[:username])
     ).map do |concert|
       Concert.save_concert(concert.artist.name, concert.name, concert.uri)
     end
-
-    redirect_to concerts_path
   end
 
   private

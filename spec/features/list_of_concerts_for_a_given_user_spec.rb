@@ -21,7 +21,7 @@ feature 'List five concerts for a given user based on top last.fm ratings' do
       click_on 'Give me!'
 
       within(:css, 'ul.concerts') do 
-        expect(page).to have_css 'li', text: '#'
+        expect(page).to have_css 'li', text: 'No Venue'
       end
     end
 

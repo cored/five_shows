@@ -1,5 +1,5 @@
 <div class="panel clearfix">
-  <%= simple_form_for @concert do |form| %>
+<%= simple_form_for @concert, url: url_for(action: 'index', controller: 'concerts'), method: 'get'  do |form| %>
     <%= form.label :username, 'Last.fm username' %>
     <%= form.input_field :username %>
     <%= form.button :submit, 'Give me!' %>
