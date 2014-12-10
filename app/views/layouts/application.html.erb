@@ -12,23 +12,18 @@
   </head>
 
   <body>
-    <div class="fixed">
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><%= link_to 'FiveShows', root_path %></h1>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <div id="main">
-      <div class="row">
-        <div class="small-16 columns">
-          <%= yield %>
+    <div class="row">
+      <div class="large-20 columns">
+        <div class="panel">
+          <h2>The Header</h2>
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <%= yield %>
+    </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
