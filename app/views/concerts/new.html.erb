@@ -1,7 +1,9 @@
-<div class="panel clearfix">
-<%= simple_form_for @concert, url: url_for(action: 'index', controller: 'concerts'), method: 'get'  do |form| %>
+<div class="large-20 columns">
+<div class="panel">
+  <%= simple_form_for @concert, url: url_for(action: 'index', controller: 'concerts'), method: 'get'  do |form| %>
     <%= form.label :username, 'Last.fm username' %>
     <%= form.input_field :username %>
     <%= form.button :submit, 'Give me!' %>
   <% end %>
 </div>
+<div>
