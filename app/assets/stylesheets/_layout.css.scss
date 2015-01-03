@@ -1,13 +1,15 @@
 body { 
-  background: $imdur;
+  background: $greytish;
+  font-family: Helvetica;
 }
 
 .logo { 
   h1 { 
-    color: $bounty_hunter;
+    color: $darkgrey;
   }
+}
 
-  .sub { 
-    color: $sophistiblue;
-  }
+.panel { 
+  border: 1px $mediumgrey solid;
+  background: $whitish;
 }
