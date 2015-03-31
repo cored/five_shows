@@ -10,7 +10,6 @@ module FiveShows
       end
 
       def retrieve
-        songkick_api = Songkickr::Remote.new ENV.fetch('SONGKICK_APIKEY')
         concerts = artists.map do |artist| 
           songkick_result = songkick_api.events(artist.name).results.first
           unless songkick_result.nil?
@@ -36,6 +35,10 @@ module FiveShows
       private 
 
       attr_reader :artists
+
+      def songkick_api 
+        @songkick_api ||= Songkickr::Remote.new ENV.fetch('SONGKICK_APIKEY')
+      end
     end
   end
 end
