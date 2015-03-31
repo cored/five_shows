@@ -21,11 +21,11 @@ describe FiveShows::SongKick::RetrieveConcertsFor do
         VCR.use_cassette('songkick-events') do 
           expect(
             FiveShows::SongKick::RetrieveConcertsFor.(artists).map(&:uri)
-          ).to eql(["http://www.songkick.com/concerts/22276903-used-at-mo-club?utm_source=31538&utm_medium=partner", 
-                    "http://www.songkick.com/festivals/1184053/id/22197803-capitals-jingle-bell-ball-2014?utm_source=31538&utm_medium=partner", 
-                    "http://www.songkick.com/concerts/20706858-la-roux-at-gibson?utm_source=31538&utm_medium=partner", 
-                    "http://www.songkick.com/festivals/122786/id/22047523-woodford-folk-festival-2014?utm_source=31538&utm_medium=partner", 
-                    "http://www.songkick.com/concerts/20968878-foo-fighters-at-cape-town-stadium?utm_source=31538&utm_medium=partner"])
+          ).to eql(["http://www.songkick.com/concerts/22764533-used-at-house-of-blues?utm_source=31538&utm_medium=partner", 
+                    "http://www.songkick.com/concerts/21816263-ed-sheeran-at-adelaide-entertainment-centre?utm_source=31538&utm_medium=partner", 
+                    "http://www.songkick.com/festivals/1556/id/23162308-melt-festival-2015?utm_source=31538&utm_medium=partner", 
+                    "http://www.songkick.com/concerts/22571023-cat-empire-at-commodore-ballroom?utm_source=31538&utm_medium=partner", 
+                    "http://www.songkick.com/concerts/23002753-kaiser-chiefs-at-distrikt?utm_source=31538&utm_medium=partner"])
         end
       end
     end
