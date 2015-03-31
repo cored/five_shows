@@ -1,10 +1,15 @@
 module FiveShows
   module SongKick 
-    module RetrieveConcertsFor
-      extend self 
+    class RetrieveConcertsFor
+      def self.call(artists)
+        new(artists).retrieve
+      end
 
-      def call(artists)
-        songkick_api = Songkickr::Remote.new ENV.fetch('SONGKICK_APIKEY')
+      def initialize(artists)
+        @artists = artists
+      end
+
+      def retrieve
         concerts = artists.map do |artist| 
           songkick_result = songkick_api.events(artist.name).results.first
           unless songkick_result.nil?
@@ -25,6 +30,14 @@ module FiveShows
           @name = "No Venue" 
           @uri = "#"
         end
+      end
+
+      private 
+
+      attr_reader :artists
+
+      def songkick_api 
+        @songkick_api ||= Songkickr::Remote.new ENV.fetch('SONGKICK_APIKEY')
       end
     end
   end
