@@ -1,9 +1,15 @@
 module FiveShows
   module LastFm
-    module RetrieveTopArtists
-      extend self
+    class RetrieveTopArtists
+      def self.call(username)
+        new(username).retrieve
+      end
 
-      def call(username)
+      def initialize(username)
+        @username = username
+      end
+
+      def retrieve
         last_fm = Lastfm.new(ENV.fetch('LASTFM_API_KEY'),
                              ENV.fetch('LASTFM_SECRET_KEY'))
         last_fm.user.get_top_artists(user: username).map do |artist| 
@@ -16,6 +22,10 @@ module FiveShows
       end
 
       Artist = Struct.new(:name, :playcount, :url)
+
+      private 
+
+      attr_reader :username
     end
   end
 end
