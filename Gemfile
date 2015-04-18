@@ -30,6 +30,7 @@ group :test do
   gem 'capybara'
   gem 'vcr'
   gem 'webmock'
+  gem 'simplecov', require: :false
 end
 
 group :production do 
